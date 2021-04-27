@@ -113,7 +113,8 @@ Style declarationsToStyle(Map<String?, List<css.Expression>> declarations) {
         case 'text-decoration-line':
           style.textDecoration =
               ExpressionMapping.expressionToTextDecorationLine(
-                  value as List<css.LiteralTerm>);
+                  List<css.LiteralTerm>.from(
+                      value.map((e) => e as css.LiteralTerm)));
           break;
         case 'text-decoration-style':
           style.textDecorationStyle =
